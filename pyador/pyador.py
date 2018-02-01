@@ -17,7 +17,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 from sklearn.model_selection import cross_val_score
 
-import pyador.local as const
+import local as const
 
 from .util.data_prep import missing_check
 from .util.data_prep import integrity_check
@@ -118,7 +118,7 @@ class Pyador:
         return clf.predict(self.num_X)
 
     def predict(self, X_test):
-        pass
+        self.clf.predict(X_test)
 
     def _data_check_fix(self, X):
         # check data type

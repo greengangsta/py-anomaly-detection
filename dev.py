@@ -2,6 +2,7 @@ import os
 import pandas as pd
 from pyador.pyador import Pyador
 from pyador import local as const
+from pyador.tests import test_pyador
 
 if __name__ == "__main__":
     dev_file = os.path.join(const.DEV_DIR, const.DEV_FILE)
@@ -15,3 +16,5 @@ if __name__ == "__main__":
 
     y_pred, X_train, Y_train = clf.fit(X)
     # print(X_train.shape, Y_train.shape)
+    # print clf._data_check_fix(X[:1])["num_df"]
+    print clf.predict(clf._data_check_fix(X[:1])["num_df"])
